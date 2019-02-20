@@ -2,8 +2,8 @@ namespace :owl_party do
   require 'open-uri'
   desc "crawls a site"
 
-# rake owl_party:work[https://tim.blog/]
-task :work, [:target] => [:environment] do |task, args|
+# rake owl_party:crawl[https://tim.blog/]
+task :crawl, [:target] => [:environment] do |task, args|
   target = args[:target]
     Spidr.site(target) do |spider|
       spider.every_url do |url| 
